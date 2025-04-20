@@ -12,6 +12,7 @@ body {
   height: 100vh; 
   flex-direction: column; 
   text-align: center;
+  padding: 20px;
 }
 
 main {
