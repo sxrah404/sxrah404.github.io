@@ -22,11 +22,40 @@ main {
 
 h1 {
   color: #00ff00; 
-  font-size: 3rem;
+  font-size: 2.5rem;
   text-shadow: 0 0 10px rgba(0, 255, 0, 0.8); 
   margin-bottom: 20px;
 }
 
 p {
   font-size: 1.25rem;
+}
+
+.typewriter-container {
+  display: flex;
+  justify-content: center;
+}
+
+.typewriter {
+  display: inline-block;
+  width: fit-content;
+  
+  overflow: hidden;
+  border-right: .15em solid #00ff00;
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: .05em;
+  animation: 
+    typing 2s steps(60, end),
+    blink-caret .75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #00ff00; }
 }
