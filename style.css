@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+body {
+  font-family: 'Roboto Mono', monospace;
+  background-color: #111; 
+  color: #eee; 
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; 
+}
+
+h1 {
+  color: #00ff00; 
+  font-size: 3rem;
+  text-shadow: 0 0 10px rgba(0, 255, 0, 0.8); 
+}
+
+p {
+  font-size: 1.25rem;
+  margin-top: 10px;
+}
