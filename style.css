@@ -14,13 +14,18 @@ body {
   text-align: center;
 }
 
+main {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
 h1 {
   color: #00ff00; 
   font-size: 3rem;
   text-shadow: 0 0 10px rgba(0, 255, 0, 0.8); 
+  margin-bottom: 20px;
 }
 
 p {
   font-size: 1.25rem;
-  margin-top: 10px;
 }
