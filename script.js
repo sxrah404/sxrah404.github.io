@@ -14,29 +14,34 @@ document.querySelectorAll('.close-btn').forEach(btn => {
 });
 
 // draggable
-const aboutWindow = document.getElementById('about');
-let isDragging = false;
-let offsetX, offsetY;
+document.querySelectorAll('.window').forEach(windowEl => {
+  const header = windowEl.querySelector('.window-header');
+  if (!header) return;
 
-aboutWindow.querySelector('.window-header').addEventListener('mousedown', e => {
-  isDragging = true;
-  const rect = aboutWindow.getBoundingClientRect();
-  offsetX = e.clientX - rect.left;
-  offsetY = e.clientY - rect.top;
-  aboutWindow.classList.add('dragging');
-});
+  let isDragging = false;
+  let offsetX, offsetY;
 
-document.addEventListener('mousemove', e => {
-  if (isDragging) {
-    aboutWindow.style.left = `${e.clientX - offsetX}px`;
-    aboutWindow.style.top = `${e.clientY - offsetY}px`;
-    aboutWindow.style.transform = `none`; // disable centering transform while dragging
-  }
-});
+  header.addEventListener('mousedown', e => {
+    isDragging = true;
+    const rect = windowEl.getBoundingClientRect();
+    offsetX = e.clientX - rect.left;
+    offsetY = e.clientY - rect.top;
+    windowEl.classList.add('dragging');
+    windowEl.style.zIndex = 10; // bring to front when dragging
+  });
 
-document.addEventListener('mouseup', () => {
-  if (isDragging) {
-    isDragging = false;
-    aboutWindow.classList.remove('dragging');
-  }
+  document.addEventListener('mousemove', e => {
+    if (isDragging) {
+      windowEl.style.left = `${e.clientX - offsetX}px`;
+      windowEl.style.top = `${e.clientY - offsetY}px`;
+      windowEl.style.transform = 'none'; // cancel initial center transform
+    }
+  });
+
+  document.addEventListener('mouseup', () => {
+    if (isDragging) {
+      isDragging = false;
+      windowEl.classList.remove('dragging');
+    }
+  });
 });
