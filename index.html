@@ -3,15 +3,47 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>sarah's portfolio!</title>
+  <title>Sarah's Website!</title>
   <link href="style.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
+
 <body>
-  <main>
-    <h1>hello! what are you doing here</h1>
-    <div class="typewriter-container">
-      <p class="typewriter">this portfolio is a work in progress...</p>
+
+  <!-- home page -->
+  <div class="window home" id="home">
+    <div class="window-header">home</div>
+    <div class="window-body">
+      <h1>Hi! I’m Sarah.</h1>
+      <h3>Click on the icons below to learn more about me! </h3>
+      <div class="icons">
+        <div class="icon" data-window="about">
+          <img src="assets/icons/about_icon.png" alt="About">
+          <span>about</span>
+        </div>
+        <div class="icon" data-window="skills">
+          <img src="assets/icons/skillset_icon.png" alt="Skills">
+          <span>skills</span>
+        </div>
+        <div class="icon" data-window="blog">
+          <img src="assets/icons/blog_icon.png" alt="Blog">
+          <span>blog</span>
+        </div>
+      </div>
     </div>
-  </main>
+  </div>
+
+  <!-- about page -->
+  <div class="window" id="about">
+    <div class="window-header">about <button class="close-btn">×</button></div>
+    <div class="window-body">
+      <h2>Sarah Jabian</h2>
+      <p>Computer Science Major at UTSA, Minor in Cybersecurity.</p>
+      <p>Blah blah blah…</p>
+    </div>
+  </div>
+
+
+  <script src="script.js"></script>
 </body>
 </html>
