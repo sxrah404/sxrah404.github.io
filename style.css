@@ -27,7 +27,7 @@ body {
   padding-left: 20px;
   border-radius: 10px 10px 0 0;
   font-family: 'Roboto Mono', monospace;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 300; /* light */
   display: flex;
   justify-content: space-between;
@@ -37,14 +37,14 @@ body {
 
 .window-body {
   padding: 10px;
-  margin-top: 80px;
   margin-top: 40px;
+  margin-bottom: 40px;
   text-align: center;
 }
 
 .home {
   display: flex;
-  width: 800px;
+  width: 600px;
   position: relative;
   z-index: 1;
 }
@@ -52,15 +52,15 @@ body {
 .window-body h1 {
   font-family: 'Poppins', sans-serif;
   font-weight: 400; /* regular */
-  font-size: 48px;
-  margin-bottom: -20px;
+  font-size: 36px;
+  margin-bottom: -10px;
 }
 
 .window-body h3 {
   font-family: 'Poppins', sans-serif;
-  font-size: 20px;
+  font-size: 14px;
   font-weight: 300; /* light */
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 }
 
 .window-body p {
@@ -74,11 +74,9 @@ ICONS
 ***********/
 
 .icons { /* the icons container */
-  margin-top: 50px;
-  margin-bottom: 60px;
   display: flex;
   justify-content: center;  
-  gap: 100px;
+  gap: 40px;
 }
 
 .icon { /* each individual icon */
@@ -95,8 +93,8 @@ ICONS
 }
 
 .icon img { /* icon image */
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   margin-bottom: 5px;    
 }
 
