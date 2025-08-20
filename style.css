@@ -195,7 +195,7 @@ body {
   font-size: 20px;
   color: black;
   margin-top: 20px;
-  margin-bottom: -10px;
+  margin-bottom: 10px;
 }
 
 #about h3 {
@@ -204,35 +204,29 @@ body {
   color: #444;
 }
 
-.education-section {
-  display: flex;
-  flex-direction: column;
-  gap: 0px;
-  padding-left: 20px; 
-  border-left: 2px solid #ccc; 
-  margin-bottom: 10px;
-  max-height: fit-content;
-  padding-left: 15px;
-}
-
-.education-section h3 {
-  font-weight: 300;
-  font-size: 14px;
-  color: #444;
-}
-
-.education-section p {
-  font-weight: 300;
-  font-size: 2px;
-  color: #444;
-}
-
-
 #about p {
   font-weight: 300; 
   font-size: 14px;  
   text-align: left;
   margin-bottom: 10px;
+}
+
+.education-section {
+  display: flex;
+  flex-direction: column;
+  padding-left: 15px;
+  border-left: 2px solid #ccc;
+}
+
+.education-section p {
+  margin: 2px 0; 
+  line-height: 1; 
+}
+
+.education-section span {
+  font-weight: 300;
+  font-size: 12px;
+  color: #777;
 }
 
 .about.dragging {
