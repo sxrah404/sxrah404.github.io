@@ -97,10 +97,12 @@ body {
   box-shadow: 0 4px 0px rgba(0,0,0,0.15);
   display: none;
   flex-direction: column;
-  overflow: hidden;
-
+  overflow-y: scroll; 
   position: absolute;
   z-index: 1;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #888888;
 }
 
 .window-header {
@@ -162,6 +164,10 @@ body {
   width: 600px;
   position: relative;
   z-index: 1;
+}
+
+.home .window-header {
+  cursor: default;
 }
 
 .home .window-body h1 {
@@ -260,6 +266,91 @@ body {
   color: #333;
 }
 
+/* PROJECTS WINDOW STYLES */
+#projects {
+  display: none; 
+  width: 800px;
+  height: 500px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  flex-direction: column;
+}
+
+#projects .projects-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  text-align: left;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  text-align: left;
+}
+
+.card {
+  display: flex;
+  gap: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 0px rgba(0,0,0,0.15);
+  padding: 16px;
+  max-width: 700px;
+  transition: all 0.3s ease;
+}
+
+.card-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  text-align: left;
+}
+
+.card-left img {
+  width: 100%;
+  max-width: 200px;
+  border-radius: 6px;
+}
+
+.card-left h3 {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.card-right {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-right p {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.card-right a {
+  font-size: 14px;
+  color: #0077cc;
+  text-decoration: none;
+}
+
+.card-right a:hover {
+  text-decoration: underline;
+}
+
+.card:hover {
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.8), 0 0 40px rgba(0, 255, 255, 0.8);
+  transform: scale(1.03);
+}
+
 /* BLOG WINDOW STYLES */
 #blog {
   display: none; 
@@ -312,6 +403,5 @@ body {
   font-family: 'Roboto Mono', monospace;
   font-size: 16px;
   font-weight: 700;
-  color: #333;
   margin-top: 5px;
 }

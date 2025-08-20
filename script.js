@@ -6,15 +6,15 @@ document.querySelectorAll('.icon').forEach(icon => {
   });
 });
 
-// close button
 document.querySelectorAll('.close-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     btn.closest('.window').style.display = 'none';
   });
 });
 
-// draggable
 document.querySelectorAll('.window').forEach(windowEl => {
+  if (windowEl.id === 'home') return;
+  
   const header = windowEl.querySelector('.window-header');
   if (!header) return;
 
@@ -27,14 +27,14 @@ document.querySelectorAll('.window').forEach(windowEl => {
     offsetX = e.clientX - rect.left;
     offsetY = e.clientY - rect.top;
     windowEl.classList.add('dragging');
-    windowEl.style.zIndex = 10; // bring to front when dragging
+    windowEl.style.zIndex = 10; 
   });
 
   document.addEventListener('mousemove', e => {
     if (isDragging) {
       windowEl.style.left = `${e.clientX - offsetX}px`;
       windowEl.style.top = `${e.clientY - offsetY}px`;
-      windowEl.style.transform = 'none'; // cancel initial center transform
+      windowEl.style.transform = 'none';
     }
   });
 
