@@ -45,3 +45,13 @@ document.querySelectorAll('.window').forEach(windowEl => {
     }
   });
 });
+
+// this is so that the most recently clicked window is on top (not counting home)
+let highestZ = 10; 
+const windows = document.querySelectorAll(".window:not(#home)");
+windows.forEach(win => {
+  win.addEventListener("mousedown", () => {
+    highestZ++; // increments the window's z-index when it's clicked
+    win.style.zIndex = highestZ;
+  });
+});
