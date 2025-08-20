@@ -19,6 +19,7 @@ body {
   border-radius: 50%;
   filter: blur(80px);
   animation: floaty 40s infinite;
+  animation-fill-mode: both;
 }
 #up {
   height: 800px; width: 800px;
@@ -41,7 +42,7 @@ body {
   height: 500px; width: 500px;
   background-image: linear-gradient(80deg, rgba(26, 248, 18, 0.6), rgba(199, 10, 52, 0.8));
   animation-name: right;
-  animation-delay: .5s;
+  animation-delay: 1.5s;
 }
 @keyframes down{
   0%, 100% {
