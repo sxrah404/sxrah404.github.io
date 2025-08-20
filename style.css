@@ -160,6 +160,11 @@ body {
 
 .about-content {
   display: flex;
+  flex-direction: column;
+}
+
+.about-header {
+  display: flex;
   border-bottom: 2px dotted #999;
   margin-bottom: 20px;
 }
@@ -172,6 +177,12 @@ body {
   margin-right: 10px;
 }
 
+.about-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 #about h1 {
   font-weight: 500;
   font-size: 28px;
@@ -180,8 +191,11 @@ body {
 }
 
 #about h2 {
-  font-weight: 400;
-  font-size: 24px;
+  font-weight: 500;
+  font-size: 20px;
+  color: black;
+  margin-top: 20px;
+  margin-bottom: -10px;
 }
 
 #about h3 {
@@ -189,6 +203,30 @@ body {
   font-size: 14px;
   color: #444;
 }
+
+.education-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  padding-left: 20px; 
+  border-left: 2px solid #ccc; 
+  margin-bottom: 10px;
+  max-height: fit-content;
+  padding-left: 15px;
+}
+
+.education-section h3 {
+  font-weight: 300;
+  font-size: 14px;
+  color: #444;
+}
+
+.education-section p {
+  font-weight: 300;
+  font-size: 2px;
+  color: #444;
+}
+
 
 #about p {
   font-weight: 300; 
