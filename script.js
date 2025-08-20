@@ -1,8 +1,13 @@
+let highestZ = 10; 
+const windows = document.querySelectorAll(".window:not(#home)");
+
 document.querySelectorAll('.icon').forEach(icon => {
   icon.addEventListener('click', () => {
     const windowId = icon.getAttribute('data-window');
     const win = document.getElementById(windowId);
     if (win) win.style.display = 'flex';
+      highestZ++;
+      win.style.zIndex = highestZ;
   });
 });
 
@@ -47,8 +52,6 @@ document.querySelectorAll('.window').forEach(windowEl => {
 });
 
 // this is so that the most recently clicked window is on top (not counting home)
-let highestZ = 10; 
-const windows = document.querySelectorAll(".window:not(#home)");
 windows.forEach(win => {
   win.addEventListener("mousedown", () => {
     highestZ++; // increments the window's z-index when it's clicked
