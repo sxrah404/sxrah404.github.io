@@ -119,7 +119,7 @@ body {
 }
 
 .window-body {
-  padding: 20px 40px 40px 40px;
+  padding: 20px 40px 40px;
   text-align: left;
   overflow-x: hidden;
   overflow-y: scroll; 
@@ -127,37 +127,37 @@ body {
 
 h1 {
   font-weight: 400;
-  font-size: 40px;
+  font-size: 2.5rem;
   color: black;
 }
 
 h2 {
   font-weight: 500;
-  font-size: 28px;
+  font-size: 1.75rem;
   color: black;
 }
 
 h3 {
   font-weight: 500;
-  font-size: 20px;
+  font-size: 1.25rem;
   color: #222;
 }
 
 h4 {
-  font-weight: 300;
-  font-size: 16px;
+  font-weight: 400;
+  font-size: 1rem;
   color: #222;
 }
 
 p {
   font-weight: 300; 
-  font-size: 16px;  
+  font-size: 1rem;  
   color: #222;
 }
 
 span {
   font-weight: 300;
-  font-size: 14px;
+  font-size: 0.875rem;
   color: #777;
 }
 
@@ -177,16 +177,12 @@ span {
   margin-top: 60px;
   margin-bottom: 0px;
   text-align: center;
-  color: black;
 }
 
-.home .window-body h2 {
-  font-weight: 300;
-  font-size: 16px;
+.home .window-body h4 {
   margin-top: 0px;
   margin-bottom: 30px;
   text-align: center;
-  color: #222;
 }
 
 /* ABOUT WINDOW */
@@ -298,25 +294,23 @@ span {
 }
 
 #skills p {
-  font-size: 14px;
   font-family: 'Roboto Mono', monospace;
+  font-size: 0.875rem;
   margin: 0px;
 }
 
 #skills ul {
-  margin: 0; 
+  margin: 0px; 
   padding-left: 20px; 
 }
 
 #skills li {
-  font-size: 14px;  
-  color: #222;
   margin-bottom: 5px;
 }
 
 .skill a {
-  font-size: 14px;
   font-family: 'Roboto Mono', monospace;
+  font-size: 0.875rem;
   color: #222;
   margin: 0px;
   text-decoration: none;
@@ -415,7 +409,7 @@ span {
   align-items: center; 
   cursor: pointer;
   text-align: center;
-  transition: transform 0.2s;
+  transition: transform 0.2s ease;
 }
 
 .icon:hover {
@@ -430,8 +424,8 @@ span {
 
 .icon span {
   font-family: 'Roboto Mono', monospace;
-  font-size: 16px;
   font-weight: 600;
-  margin-top: 5px;
+  font-size: 1rem;
   color: black;
+  margin-top: 5px;
 }

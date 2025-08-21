@@ -1,22 +1,37 @@
 let highestZ = 10; 
 const windows = document.querySelectorAll(".window:not(#home)");
 
+// opening windows
 document.querySelectorAll('.icon').forEach(icon => {
+  icon.addEventListener('mousedown', () => {
+    icon.style.transform = "scale(0.9)";
+  });
+
+  icon.addEventListener('mouseup', () => {
+    icon.style.transform = "scale(1)";
+  });
+
   icon.addEventListener('click', () => {
     const windowId = icon.getAttribute('data-window');
     const win = document.getElementById(windowId);
     if (win) win.style.display = 'flex';
-      highestZ++;
-      win.style.zIndex = highestZ;
+    highestZ++;
+    win.style.zIndex = highestZ;
+  });
+
+    icon.addEventListener('mouseleave', () => {
+    icon.style.transform = "scale(1)";
   });
 });
 
+// closing windows
 document.querySelectorAll('.close-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     btn.closest('.window').style.display = 'none';
   });
 });
 
+// dragging windows
 document.querySelectorAll('.window').forEach(windowEl => {
   if (windowEl.id === 'home') return;
   
