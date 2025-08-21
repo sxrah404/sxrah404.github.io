@@ -154,7 +154,7 @@ body {
 #about {
   display: none; 
   width: 700px;
-  height: 400px;
+  height: 500px;
   position: absolute;
   z-index: 2;
 }
@@ -195,65 +195,59 @@ body {
   font-weight: 500;
   font-size: 20px;
   color: black;
-  margin-top: 20px;
-  margin-bottom: 10px;
 }
 
 #about h3 {
   font-weight: 300;
-  font-size: 14px;
+  font-size: 16px;
+  margin-top: 10px;
   color: #444;
 }
 
 #about p {
   font-weight: 300; 
-  font-size: 14px;  
+  font-size: 16px;  
   text-align: left;
-  margin-bottom: 10px;
 }
 
 .education-section {
   display: flex;
   flex-direction: column;
-  padding-left: 15px;
+  padding-left: 20px;
   border-left: 2px solid #ccc;
 }
 
 .education-section p {
-  margin: 2px 0; 
+  margin: 5px 0; 
   line-height: 1; 
 }
 
 .education-section span {
   font-weight: 300;
-  font-size: 12px;
+  font-size: 14px;
   color: #777;
-}
-
-.about.dragging {
-  cursor: grabbing;
+  margin-top: 5px;
 }
 
 /* SKILLS WINDOW STYLES */
 #skills {
   display: none; 
-  width: 450px;
+  width: 500px;
   height: 550px;
   position: absolute;
   z-index: 2;
 }
 
-#skills h1 {
+#skills h2 {
   font-weight: 500;
-  font-size: 18px;
+  font-size: 20px;
   color: black;
   margin-bottom: -10px;
 }
 
 #skills li {
   font-weight: 300;
-  font-size: 14px;
-  margin-bottom: 4px;
+  font-size: 16px;
 }
 
 /* PROJECTS WINDOW */
@@ -302,9 +296,9 @@ body {
   border-color: #eaeaea;
 }
 
-.card-left h3 {
+.card-left h2 {
   font-weight: 500;
-  font-size: 18px;
+  font-size: 20px;
   color: black;
   margin-bottom: -10px;
 }
@@ -316,12 +310,12 @@ body {
 }
 
 .card-right p {
-  font-size: 14px;
+  font-size: 16px;
   margin-bottom: 0px;
 }
 
 .card-right a {
-  font-size: 14px;
+  font-size: 16px;
   color: #0077cc;
   text-decoration: none;
   margin-top: 10px;
@@ -341,8 +335,8 @@ body {
   display: none; 
   width: 500px;
   position: absolute;
-  z-index: 2;
   flex-direction: column;
+  z-index: 2;
 }
 
 .blog-content {
