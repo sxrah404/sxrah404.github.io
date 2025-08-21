@@ -87,7 +87,6 @@ body {
   box-shadow: 0 4px 0px rgba(0,0,0,0.15);
   display: none;
   flex-direction: column;
-  
   position: absolute;
   z-index: 1;
 }
