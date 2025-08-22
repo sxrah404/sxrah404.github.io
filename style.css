@@ -219,7 +219,7 @@ span {
 
 #about h3 {
   margin-top: 40px;
-  margin-bottom: -10px;
+  margin-bottom: 10px;
 }
 
 #about h4 {
@@ -227,11 +227,16 @@ span {
 }
 
 #about p {
-  margin-bottom: 0px;
+  margin-bottom: 10px;
+}
+
+#about span {
+  display: block;
+  margin-top: 12px;
 }
 
 #about ul {
-  margin-top: 10px; 
+  margin: 0px; 
   padding-left: 20px; 
 }
 
@@ -239,14 +244,6 @@ span {
   padding-left: 20px;
   border-left: 2px solid #ccc;
   margin-top: 20px;
-}
-
-.education-section p {
-  margin: 2px 0; 
-}
-
-.education-section span {
-  margin-top: 4px;
 }
 
 .collapsible {
@@ -283,7 +280,7 @@ span {
   content: "\2796"; /* - icon */
 }
 
-.course-container {
+.course-container, .experience-container {
   display: none;
   overflow: hidden;
   flex-direction: row;
@@ -308,10 +305,14 @@ span {
   transition: all 0.1s ease;
 }
 
-.course p {
+#about .course p {
   font-family: 'Roboto Mono', monospace;
   font-size: 0.875rem;
   margin: 0px;
+}
+
+#about .experience-container li {
+  font-size: 0.875rem;
 }
 
 .course:hover {
@@ -364,10 +365,6 @@ span {
   padding-left: 20px; 
 }
 
-#skills li {
-  margin-bottom: 5px;
-}
-
 .skill a {
   font-family: 'Roboto Mono', monospace;
   font-size: 0.875rem;
@@ -400,7 +397,6 @@ span {
   gap: 20px; 
   padding: 20px;
   width: 100%;
-
 }
 
 .project {
@@ -414,6 +410,7 @@ span {
   padding: 30px 20px;
   width: inherit;
   transition: all 0.3s ease;
+  margin-top: 30px;
 }
 
 .project-left {
