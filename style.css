@@ -29,6 +29,20 @@
   animation-name: right;
   animation-delay: 1.5s;
 }
+
+/* (responsive background) */
+@media (max-width: 768px) {
+  #up, #down, #left, #right {
+    filter: blur(40px);
+  }
+  #up {
+    height: 400px; width: 400px;
+  }
+  #down, #left, #right {
+    height: 250px; width: 250px;
+  }
+}
+
 @keyframes down{
   0%, 100% {
     bottom: -100px;
@@ -65,8 +79,9 @@
 /* GLOBAL */
 body {
   margin: 0;
-  padding: 0;
+  padding: 10px;
   min-height: 100vh;
+  height: 100vh;
   background-image: linear-gradient(80deg, rgb(5, 124, 172), rgb(199, 10, 114));
   overflow: hidden;
   font-family: 'Poppins', sans-serif;
@@ -76,7 +91,21 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(80deg, rgb(5, 124, 172), rgb(199, 10, 114));
+  z-index: -1; 
+}
+
 
 .window {
   background: white;
@@ -89,6 +118,9 @@ body {
   flex-direction: column;
   position: absolute;
   z-index: 1;
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow: hidden;
 }
 
 .window-header {
@@ -103,10 +135,11 @@ body {
   justify-content: space-between;
   align-items: center;
   text-transform: lowercase;
-  cursor: grab; 
+  cursor: move; 
   position: sticky;
   top: 0;
   z-index: 10;
+  user-select: none;
 }
 
 .window-header button.close-btn {
@@ -121,7 +154,15 @@ body {
   padding: 20px 40px 40px;
   text-align: left;
   overflow-x: hidden;
-  overflow-y: scroll; 
+  overflow-y: auto; 
+  flex: 1;
+}
+
+/* (responsive window body padding) */
+@media (max-width: 768px) {
+  .window-body {
+    padding: 15px 20px 25px;
+  }
 }
 
 h1 {
@@ -160,6 +201,25 @@ span {
   color: #777;
 }
 
+/* responsive font sizes */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+  h3 {
+    font-size: 1.125rem;
+  }
+  p {
+    font-size: 0.9rem;
+  }
+  span {
+    font-size: 0.8rem;
+  }
+}
+
 /* HOME WINDOW */
 .home {
   width: 600px;
@@ -184,6 +244,17 @@ span {
   text-align: center;
 }
 
+/* (responsive home window) */
+@media (max-width: 768px) {
+  .home {
+    width: 95vw;
+    max-width: 500px;
+  }
+  .home .window-body h1 {
+    margin-top: 30px;
+  }
+}
+
 /* ABOUT WINDOW */
 #about {
   display: none; 
@@ -197,6 +268,7 @@ span {
   display: flex;
   border-bottom: 2px dotted #999;
   margin-bottom: 20px;
+  gap: 20px;
 }
 
 .about-left img {
@@ -204,16 +276,36 @@ span {
   height: 150px;
   border-radius: 50%; 
   object-fit: cover;
-  margin-right: 10px;
+  flex-shrink: 0;
 }
 
 .about-right {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  flex: 1;
+}
+
+/* (responsive about window) */
+@media (max-width: 768px) {
+  #about {
+    width: 95vw;
+    height: 80vh;
+  }
+  .about-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0px;
+  }
+  .about-left img {
+    width: 120px;
+    height: 120px;
+  }
 }
 
 #about h2 {
+  margin-top: 0px;
   margin-bottom: -10px;
 }
 
@@ -246,7 +338,13 @@ span {
   margin-top: 20px;
 }
 
-.education-collapsible {
+@media (max-width: 768px) {
+  .education-section {
+    padding-left: 15px;
+  }
+}
+
+.education-collapsible, .experience-collapsible {
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
   font-size: 1rem;
@@ -254,14 +352,21 @@ span {
   color: #222;
   background-color: #eee;
   width: 100%;
-  padding: 16px;
   border: none;
   border-radius: 10px;
   cursor: pointer;
   margin-top: 20px;
 }
 
-.education-collapsible:hover {
+.education-collapsible {
+  padding: 16px;
+}
+
+.experience-collapsible {
+  padding: 0px 16px 10px;
+}
+
+.education-collapsible:hover, .experience-collapsible:hover {
   background-color: #ccc;
 }
 
@@ -280,32 +385,13 @@ span {
 .education-active:after { 
   font-family: 'Material Symbols Outlined';
   content: 'remove'; 
-  font-size: 20px;
-}
-
-.experience-collapsible {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 400;
-  font-size: 1rem;
-  text-align: left;
-  color: #222;
-  background-color: #eee;
-  width: 100%;
-  padding: 0px 16px 10px;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  margin-top: 20px;
-}
-
-.experience-collapsible:hover {
-  background-color: #ccc;
+  font-size: 1.25rem;
 }
 
 .experience-collapsible:after { 
   font-family: 'Material Symbols Outlined';
   content: 'expand_more'; 
-  font-size: 20px;
+  font-size: 1.25rem;
   float: right;
   margin-top: -80px;
 }
@@ -318,6 +404,7 @@ span {
 .experience-active:after { 
   font-family: 'Material Symbols Outlined';
   content: 'expand_less';
+  margin-top: -80px;
 }
 
 .education-container, .experience-container {
@@ -366,6 +453,14 @@ span {
   height: 500px;
   position: absolute;
   z-index: 2;
+}
+
+/* (responsive skills window) */
+@media (max-width: 768px) {
+  #skills {
+    width: 95vw;
+    height: 70vh;
+  }
 }
 
 .skill-container {
@@ -430,13 +525,28 @@ span {
   z-index: 2;
 }
 
-.project-container {
+/* (responsive projects window) */
+@media (max-width: 768px) {
+  #projects {
+    width: 95vw;
+    max-height: 85vh;
+  }
+}
+
+.project-container, .projects-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px; 
-  padding: 20px;
+  padding: 0px 20px;
   width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .project-container, .projects-container {
+    padding: 10px;
+  }
 }
 
 .project {
@@ -448,9 +558,21 @@ span {
   border-color: #eaeaea;
   box-shadow: 0 4px 0px rgba(0,0,0,0.15);
   padding: 30px 20px;
-  width: inherit;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
   transition: all 0.3s ease;
   margin-top: 30px;
+}
+
+/* (responsive projects) */
+@media (max-width: 768px) {
+  .project {
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px 15px;
+    margin-top: 20px;
+  }
 }
 
 .project-left {
@@ -466,6 +588,17 @@ span {
   border-style: solid;
   border-width: 1px;
   border-color: #eaeaea;
+}
+
+/* (responsive project images) */
+@media (max-width: 768px) {
+  .project-left {
+    align-items: center;
+  }
+  .project-left img {
+    width: 150px;
+    height: 150px;
+  }
 }
 
 .project-right {
@@ -500,6 +633,22 @@ span {
   gap: 40px;
   margin-top: 40px;
   margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+/* (responsive icons) */
+@media (max-width: 768px) {
+  .icons {
+    gap: 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .icons {
+    gap: 15px;
+  }
 }
 
 .icon {
@@ -509,6 +658,7 @@ span {
   cursor: pointer;
   text-align: center;
   transition: transform 0.2s ease;
+  min-width: 60px;
 }
 
 .icon:hover {
@@ -527,4 +677,32 @@ span {
   font-size: 1rem;
   color: black;
   margin-top: 5px;
+}
+
+/* (responsive icon sizes) */
+@media (max-width: 480px) {
+  .icon img {
+    width: 35px;
+    height: 35px;
+  }
+  .icon span {
+    font-size: 0.9rem;
+  }
+}
+
+/* (other responsive stuff) */
+@media (max-width: 480px) {
+  body {
+    padding: 5px;
+  }
+  
+  .window-header {
+    padding: 12px 15px;
+    font-size: 14px;
+  }
+  
+  .course, .skill {
+    white-space: normal;
+    text-align: center;
+  }
 }
