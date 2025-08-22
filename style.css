@@ -246,7 +246,7 @@ span {
   margin-top: 20px;
 }
 
-.collapsible {
+.education-collapsible {
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
   font-size: 1rem;
@@ -261,26 +261,66 @@ span {
   margin-top: 20px;
 }
 
-.collapsible:hover {
+.education-collapsible:hover {
   background-color: #ccc;
 }
 
-.collapsible:after { 
-  content: '\02795'; /* + icon */
-  font-size: 12px;
+.education-collapsible:after { 
+  font-family: 'Material Symbols Outlined';
+  content: 'add'; 
+  font-size: 20px;
   float: right;
 }
 
-.active {
+.education-active {
   background-color: #eee;
   border-radius: 10px 10px 0 0;
 }
 
-.active:after { 
-  content: "\2796"; /* - icon */
+.education-active:after { 
+  font-family: 'Material Symbols Outlined';
+  content: 'remove'; 
+  font-size: 20px;
 }
 
-.course-container, .experience-container {
+.experience-collapsible {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  text-align: left;
+  color: #222;
+  background-color: #eee;
+  width: 100%;
+  padding: 0px 16px 10px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.experience-collapsible:hover {
+  background-color: #ccc;
+}
+
+.experience-collapsible:after { 
+  font-family: 'Material Symbols Outlined';
+  content: 'expand_more'; 
+  font-size: 20px;
+  float: right;
+  margin-top: -80px;
+}
+
+.experience-active {
+  background-color: #eee;
+  border-radius: 10px 10px 0 0;
+}
+
+.experience-active:after { 
+  font-family: 'Material Symbols Outlined';
+  content: 'expand_less';
+}
+
+.education-container, .experience-container {
   display: none;
   overflow: hidden;
   flex-direction: row;

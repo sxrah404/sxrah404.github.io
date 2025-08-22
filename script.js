@@ -88,12 +88,29 @@ windows.forEach(win => {
   });
 });
 
-var coll = document.getElementsByClassName("collapsible");
+// education section
+var coll = document.getElementsByClassName("education-collapsible");
 var i;
 
 for (i = 0; i < coll.length; i++) {
   coll[i].addEventListener("click", function() {
-    this.classList.toggle("active");
+    this.classList.toggle("education-active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+
+// experience section
+var coll = document.getElementsByClassName("experience-collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("experience-active");
     var content = this.nextElementSibling;
     if (content.style.display === "block") {
       content.style.display = "none";
