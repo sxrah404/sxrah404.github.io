@@ -34,7 +34,7 @@ document.querySelectorAll('.close-btn').forEach(btn => {
 // dragging windows
 document.querySelectorAll('.window').forEach(windowEl => {
   if (windowEl.id === 'home') return;
-  
+
   const header = windowEl.querySelector('.window-header');
   if (!header) return;
 
@@ -47,13 +47,27 @@ document.querySelectorAll('.window').forEach(windowEl => {
     offsetX = e.clientX - rect.left;
     offsetY = e.clientY - rect.top;
     windowEl.classList.add('dragging');
-    windowEl.style.zIndex = 10; 
+
+    highestZ++;
+    windowEl.style.zIndex = highestZ;
+
+    e.preventDefault(); 
   });
 
   document.addEventListener('mousemove', e => {
     if (isDragging) {
-      windowEl.style.left = `${e.clientX - offsetX}px`;
-      windowEl.style.top = `${e.clientY - offsetY}px`;
+      let newLeft = e.clientX - offsetX;
+      let newTop = e.clientY - offsetY;
+
+      const winRect = windowEl.getBoundingClientRect();
+      const viewportWidth = window.innerWidth;
+      const viewportHeight = window.innerHeight;
+
+      newLeft = Math.max(0, Math.min(newLeft, viewportWidth - winRect.width));
+      newTop = Math.max(0, Math.min(newTop, viewportHeight - winRect.height));
+
+      windowEl.style.left = `${newLeft}px`;
+      windowEl.style.top = `${newTop}px`;
       windowEl.style.transform = 'none';
     }
   });
@@ -73,3 +87,18 @@ windows.forEach(win => {
     win.style.zIndex = highestZ;
   });
 });
+
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
